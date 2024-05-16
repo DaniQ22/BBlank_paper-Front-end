@@ -1,0 +1,105 @@
+section{
+    position: relative;
+}
+.container {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(51, 49, 49);
+    border-radius: 50%;
+    z-index: 100;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #f5eb69;
+    cursor: pointer;
+}
+
+.container {
+    font-size: 24px; /* Tamaño inicial del ícono */
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Tamaño original */
+    }
+    50% {
+        transform: scale(1.2); /* Agrandado a 150% */
+    }
+}
+.suggest-post {
+    width: 27rem;
+    height: 25rem;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 101;
+    background-color: rgb(94, 91, 91);
+    border-radius: 10px;
+    display: none;
+    transition: display .3s ease-in-out;
+}
+.suggest-post.open{
+    display: flex;
+
+  
+}
+
+.suggest-post header{
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 5px;
+        border-bottom: 1px solid rgb(139, 137, 137);
+        border-radius: 0 0 10px 10px ; /* Redondea solo las esquinas inferiores */
+
+
+}
+.suggest-post header .robot  {
+    height: 100%;
+    min-width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.suggest-post header .robot img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.suggest-post header .text {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;    
+    
+}
+.suggest-post header .text .text_typing {
+   
+    animation: typing 2.5s steps(35), transparent .5s step-end infinite alternate; /* Aplica la animación de escritura y parpadeo del cursor */
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 13px;
+    color: #fff;
+    border-right: 2px solid;
+
+}
+@keyframes typing {
+    from { width: 0px; }
+}
+@keyframes tranparent {
+    50% {
+        border-color: transparent;
+    }
+    
+}

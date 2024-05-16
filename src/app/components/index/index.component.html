@@ -1,0 +1,13 @@
+<app-nabvar (emitterEventPost)="receiveEventPost($event)"></app-nabvar>
+<div class="container" *ngIf="isVisible">
+  <div class="container-left"></div>
+  <div class="container-middle">
+    <app-publicate-post [openContentPostFromNavbar]="post"></app-publicate-post>
+    <app-view-post [receiveUseLogged]="userLogged"></app-view-post>
+  </div>
+  <div class="container-right">
+    <app-chat></app-chat>
+  </div>
+  <app-suggest-post></app-suggest-post>
+</div>
+<!-- <app-post-detail class="post-detail"></app-post-detail> -->

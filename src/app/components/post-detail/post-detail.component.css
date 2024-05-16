@@ -1,0 +1,168 @@
+.post-detail {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.74);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+}
+.wiew-post-detail {
+    width: 50%;
+    max-height: 550px;
+    height: 550px;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(41, 40, 40);
+    border-radius: 10px;
+}
+.wiew-post-detail .heder-post {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid gray;
+}
+.wiew-post-detail .heder-post span {
+    color: white;
+    font-size: 20px;
+}
+.wiew-post-detail .heder-post .close-post {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 10px;
+    border-radius: 50%;
+    background-color: rgb(90, 89, 89);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+.wiew-post-detail .heder-post .close-post:hover {
+    background-color: rgb(156, 154, 154);
+}
+.wiew-post-detail  .body {
+    width: 100%;
+    height: calc(100% - 60px - 2px); /* Restamos la altura del header y el borde */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.wiew-post-detail .body .user-info {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 1rem;
+}
+.wiew-post-detail .body .user-info .profile-user {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.wiew-post-detail .body .user-info .name-user span{
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wiew-post-detail .body .user-info .name-user .info-date-post {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    gap: .5rem;
+    font-size: 12px;
+}
+.wiew-post-detail .body .user-info .name-user .info-date-post li {
+    color: #fff;
+}
+.wiew-post-detail .body .content-post {
+    height: auto;
+    width: 100%;
+    color: #fff;
+    padding: 0 20px;
+}
+.wiew-post-detail .body .images-post {
+    height: 300px;
+    width: 100%;
+    border: 1px solid white;
+    color: #fff;
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+}
+.wiew-post-detail .body .images-post .next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    cursor: pointer;
+}
+.wiew-post-detail .body .images-post .prev {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.wiew-post-detail .body .images-post .images {
+    width: 80%;
+    height: 100%;
+    border: 1px solid white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+.wiew-post-detail .body .images-post .images img {
+    object-fit: contain;
+    object-position: center; /* Centra la imagen en el contenedor */
+}
+
+.wiew-post-detail .body .comments-post {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    padding: 20px;
+
+}
+.wiew-post-detail .body .comments-post .container-post {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.wiew-post-detail .body .comments-post .container-post .user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.wiew-post-detail .body .comments-post .container-post .comment {
+    width: calc(100% - 40px - 2px);
+    height: auto;
+    color: #fff;
+    padding: 5px;
+    background-color: rgb(70, 63, 63);
+    border-radius: 10px;
+}
+
+.wiew-post-detail .body .comments-post .container-post .comment .name-user {
+    font-weight: 700;
+}
+.wiew-post-detail .body .comments-post .container-post .comment .content-comment {
+    font-size: 15px;
+}

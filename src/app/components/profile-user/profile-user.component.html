@@ -1,0 +1,39 @@
+<main class="container">
+    <section class="header">
+        <div class="user-image">
+            <img [src]="user.imageUserDTO?.imgUrlDTO">
+            <div class="change-img-user">
+                <li class="fa-solid fa-camera" (click)="openBoxUpdateImageUserFromIconCamera()"></li>
+            </div>
+        </div>
+
+        <div class="info-user">
+            {{user.firstNameUser}} {{user.lastNameUser}}
+        </div>
+
+        <div class="edit-profile">
+            <li class="fa-solid fa-pencil"></li> <span>Editar informacion</span>
+        </div>
+    </section>
+    <section class="info-complete">
+        <div class="box-left"></div>
+        <div class="box-rigth"></div>
+    </section>
+    <div class="box-update-user" *ngIf="closeBoxUpdateImage">
+        <div class="close" (click)="openBoxUpdateImageUserFromIconClose()">
+            <li class="fas fa-close" ></li>
+        </div>
+        <div class="add-image" (click)="fileInput.click()">
+            <li class="fa-solid fa-plus"></li><span>Agrega una foto</span>
+            <input #fileInput type="file" style="display: none" (change)="handleFileInput($event)">
+        </div>
+
+        <div class="image_uploaded" *ngIf="urlImageAdd">
+            <img [src]="urlImageAdd">
+        </div>
+        <button *ngIf="urlImageAdd"
+        (click)="updateImageUser()">Guardar imagen</button>
+
+    </div>
+
+</main>

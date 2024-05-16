@@ -1,0 +1,112 @@
+<section class="container-post">
+  <div class="post">
+    <div class="user">
+      <li class="fas fa-user"></li>
+    </div>
+    <input
+      type="text"
+      placeholder="Publica un articulo aqui"
+      (click)="showContentPost(true)"
+    />
+  </div>
+  <form [formGroup]="formArticle">
+    <div class="post-content" [ngClass]="{ 'open-content-post': ContentPost }">
+      <div class="header-post">
+        <h2>Crea un post</h2>
+        <div class="close" (click)="showContentPost(false)">
+          <li class="fas fa-close"></li>
+        </div>
+      </div>
+
+      <div class="user-post">
+        <div class="info-user">
+          <div class="user">
+            <li class="fas fa-user"></li>
+          </div>
+        </div>
+        <span>Nombre de la persona</span>
+      </div>
+      <div class="body-post">
+        <input
+          formControlName="tittle"
+          class="tittle-post"
+          type="text"
+          placeholder="Agrega un titulo"
+        />
+        <input
+          formControlName="contentPost"
+          class="input-post"
+          placeholder="¿Escribe aqui tu contenido?"
+        />
+
+        <div class="image" *ngIf="addImage">
+          <div
+            class="box-image"
+            (click)="fileInput.click()"
+            *ngIf="selectedImage.length == 0"
+          >
+            <input
+              #fileInput
+              type="file"
+              class="file-image"
+              style="display: none"
+              (change)="handleFileInput($event)"
+            />
+            <div class="icon">
+              <li class="fas fa-images"></li>
+            </div>
+            <span>Agrega fotos</span>
+            <span class="p">O arrastra y sueltalas</span>
+            <div class="close close-box-image" (click)="addImage=false">
+              <li class="fas fa-close"></li>
+            </div>
+          </div>
+          
+          <div class="box-image imgs" *ngIf="selectedImage.length > 0">
+            <div
+              [ngClass]="{
+                'image-container_for_four_image': selectedImage.length >= 3,
+                'image-container_for_one_image': selectedImage.length == 1,
+                'image-container_for_two_image': selectedImage.length > 1
+              }"
+            >
+              <div
+                class="container-image_item"
+                *ngFor="let image of selectedImage; let i = index"
+                (mouseenter)="image.showCancelOption = true"
+                (mouseleave)="image.showCancelOption = false"
+              >
+                <img [src]="getSanitizedImageUrl(image.file)" class="image_item" />
+                <div
+                  class="delete_image"
+                  [ngClass]="{ show_option_delete: image.showCancelOption}"
+                  (click)="deleteImgOfList(i)"
+                >
+                  <li class="fas fa-close"></li>
+                </div>
+              </div>
+            </div>
+            <div class="add-other-image" (click)="fileInput.click()">
+              <input
+                #fileInput
+                type="file"
+                class="file-image"
+                style="display: none"
+                (change)="handleFileInput($event)"
+              />
+              <i class="fa-solid fa-file-circle-plus"></i>Agrega mas imagenes
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="add-image">
+        <span>Agregar a tu publicacion</span>
+        <li class="fas fa-image" (click)="showBoxAddImae()"></li>
+      </div>
+      <div class="button">
+        <button (click)="saveArticle()">Publicar</button>
+      </div>
+    </div>
+  </form>
+</section>

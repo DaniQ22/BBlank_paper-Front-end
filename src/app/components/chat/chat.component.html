@@ -1,0 +1,32 @@
+<section class="chat-section">
+    <div class="chat">
+        <header class="header">
+            <span>Chatea con los usuarios</span>
+        </header>
+        <div class="container">
+            <div class="users" *ngFor="let user of listUser">
+                <div class="user">
+                    <span>{{user.firstNameUser.charAt(0)}}{{user.lastNameUser.charAt(0)}}</span>
+                </div>
+                <span class="name">
+                    {{user.firstNameUser}} {{user.lastNameUser}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-of-user">
+        <header>
+            <span>Mariela Gomez</span>
+        </header>
+        <div class="container">
+            <div class="message-right">
+
+            </div>
+            <div class="message-left">
+
+            </div>
+        </div>
+    </div>
+
+</section>

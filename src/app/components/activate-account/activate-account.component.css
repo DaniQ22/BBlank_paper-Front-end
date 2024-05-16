@@ -1,0 +1,23 @@
+.container {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+button {
+    width: 10rem;
+    height: 30px;
+    border: none;
+    background-color: blue;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+
+}

@@ -1,0 +1,101 @@
+<section class="view-post">
+  <div class="container" *ngFor="let article of articles; let i = index">
+    <div class="post-option" (click)="openMenuOption(article.userDTO.emailUser, 
+    i, article.showOptionPost)">
+      <li class="fas fa-ellipsis-v"></li>
+    </div>
+    <div class="menu-post-option" [ngClass]="{ open: article.showOptionPost}">
+      <div class="delete" (click)="(deleteArticle(article.id))">
+        <li class="fas fa-trash"></li>
+        <span>Eliminar</span>
+      </div>
+      <div class="update">
+        <li class="fas fa-pencil"></li>
+        Editar
+      </div>
+    </div>
+
+    <div class="user-info">
+      <div class="user-box">
+        <img [src]="article.userDTO.imageUserDTO ? article.userDTO.imageUserDTO.imgUrlDTO : 'fallback_image_url'" alt="">
+      </div>
+      <div class="user-info-additional">
+        <span>
+          {{
+          article.userDTO.firstNameUser + " " + article.userDTO.lastNameUser
+          }}</span>
+        <li class="fa-solid fa-earth-americas">
+          <span>{{ article.publicationDatePost | slice : 0 : 10 }}</span>
+        </li>
+      </div>
+    </div>
+
+    <div class="post-info">
+      <h3>{{ article.tittle }}</h3>
+      <p>
+        {{ article.contentPost }}
+      </p>
+    </div>
+
+    <div class="img-post" *ngIf="article.imgDTO.length > 0">
+      <div [ngClass]="{
+          'image-container_for_four_image': article.imgDTO.length >= 3,
+          'image-container_for_one_image': article.imgDTO.length == 1,
+          'image-container_for_two_image': article.imgDTO.length > 1
+        }">
+        <div *ngFor="let image of article.imgDTO">
+          <img [src]="image.imgUrlDTO" class="image" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="count-like-post">
+      <li class="fas fa-thumbs-up">
+        <span>{{ article.likeCountPost }}</span>
+      </li>
+      <li class="fas fa-thumbs-down">
+        <span>{{article.dislikeCountPost}}</span>
+      </li>
+      <li class="fas fa-comment">
+        <span>{{ article.commentDTO.length }}</span>
+      </li>
+    </div>
+    <div class="box-actions">
+      <span (click)="likeArticle(article.id)" [ngClass]="{'like':article.isLikedByCurrentUser}">
+        <li class="fas fa-thumbs-up"></li>
+        Like
+      </span>
+      <span (click)="dontLikePost(article.id)" [ngClass]="{'like': article.isDisLikedByCurrentUser}">
+        <li class="fas fa-thumbs-down"></li>
+        Don't Like
+      </span>
+      <span>
+        <li class="fas fa-comment"></li>
+        Comment
+      </span>
+    </div>
+    <div class="comment-post">
+      <div class="comments" *ngFor="let comment of article.commentDTO | slice:0:3">
+        <div class="user-profile">
+          {{comment.userDTO.firstNameUser.charAt(0)}}{{comment.userDTO.lastNameUser.charAt(0)}}
+        </div>
+        <div class="comment-user">
+          <span>{{comment.userDTO.firstNameUser}} {{comment.userDTO.lastNameUser}}</span>
+          <p>{{comment.contentComment}}</p>
+        </div>
+      </div>
+      <div class="more-comment" *ngIf="article.commentDTO.length > 3">
+        <p>Ver mas comentarios</p>
+      </div>
+      <div class="your-comment">
+        <div class="user-profile">
+          <li class="fas fa-user"></li>
+        </div>
+        <form [formGroup]="formComment">
+          <input formControlName="contentComment" type="text" placeholder=" Has un comentario" />
+          <button (click)="commentPost(article.id)" class="fas fa-paper-plane"></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

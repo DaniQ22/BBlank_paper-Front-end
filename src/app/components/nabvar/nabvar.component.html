@@ -1,0 +1,51 @@
+<div class="nabvar">
+    <nav>
+        <div class="nav-left">
+
+            <ul>
+                <li class="fas fa-scroll"><a href="">Blank_Paper</a></li>
+                <input type="search">
+            </ul>
+        </div>
+        <div class="nav-middle">
+            <ul>
+                <a routerLink="/index">
+                    <li (click)="scrollToTop()">Inicio</li>
+                </a>
+                <li (click)="emitEventPost()">Publicar</li>
+                <li>Ver todos</li>
+            </ul>
+        </div>
+        <div class="nav-right">
+
+            <div class="notifications">
+                <div class="notification-container">
+                    <li class="fas fa-bell"></li>
+                </div>
+            </div>
+
+            <span> {{user.firstNameUser}} {{user.lastNameUser}}</span>
+
+
+            <div class="user" [ngClass]="{'is_open': isOpenMenu}" (click)="openMen()">
+                <img [src]="user.imageUserDTO?.imgUrlDTO">
+                <div class="open-menu-user">
+                    <li class=" fas fa-chevron-down"></li>
+                </div>
+            </div>
+
+            <div class="menu-options-user" *ngIf="isOpenMenu == true">
+                <div class="logout-user" (click)="logOut()">
+                    <li class="fas fa-right-from-bracket"></li><span>Cerrar Sesion</span>
+                </div>
+                <div class="profile-user">
+                    <a routerLink="/index/profile-user">
+                        <li class="fas fa-user"></li><span>Ver perfil</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>

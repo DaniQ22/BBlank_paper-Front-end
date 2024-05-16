@@ -1,0 +1,41 @@
+.container-left {
+  position: absolute;
+  width: 20%;
+  left: 0;
+  height: 100vh;
+}
+
+.container-right {
+  width: 20%;
+  position: absolute;
+  right: 0;
+  height: 100vh;
+}
+
+.container-middle {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  left: 50%;
+  transform: translatex(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container {
+  height: 100vh; /* Altura total de la ventana */
+  max-width: 100%;
+  position: relative;
+  padding-top: 90px;
+
+}
+.nav-bar {
+  z-index: 3;
+}
+.post-detail {
+  z-index: 4;
+}

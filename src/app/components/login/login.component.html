@@ -1,0 +1,139 @@
+<section>
+  <div
+    class="container"
+    [ngClass]="{ 'sign-up-mode': isSignUpMode, 'sign-up-mode2': isSignUpMode }"
+  >
+    <div class="signin-signup">
+      <form [formGroup]="formLogin" class="sign-in-form">
+        <h2 class="tittle">Sign In</h2>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input formControlName="email" type="email" placeholder="email" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            formControlName="password"
+            type="password"
+            placeholder="password"
+          />
+        </div>
+        <button class="btn" (click)="login()">Login</button>
+        <div class="social-text">
+          <p>O inicie sesion con las siguientes opciones</p>
+        </div>
+        <div class="social-media">
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <p class="account-text">
+          ¿Aun no tienes una cuenta?
+          <a (click)="sign_up_mode2()">Resgistrese aqui</a>
+        </p>
+      </form>
+
+      <form class="sign-up-form" [formGroup]="formSignUp">
+        <h2 class="tittle">Sign In</h2>
+        <div class="row">
+          <div class="col-6">
+            <div class="input-field">
+              <input
+                formControlName="firstNameUser"
+                type="text"
+                placeholder="Nombre"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-field">
+              <input
+                formControlName="lastNameUser"
+                type="text"
+                placeholder="Apellido"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input formControlName="emailUser" type="email" placeholder="email" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            formControlName="passwordUser"
+            type="password"
+            placeholder="password"
+          />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            formControlName="repeatPassword"
+            type="password"
+            placeholder="repeat password"
+          />
+        </div>
+        <button (click)="signUp()" class="btn">Sign In</button>
+        <div class="social-text">
+          <p>O inicie sesion con las siguientes opciones</p>
+        </div>
+        <div class="social-media">
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="" class="social-icon">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+        <p class="account-text">
+          ¿Ya tienes una cuenta?
+          <a (click)="sign_up_mode2()">Inicie sesion aqui</a>
+        </p>
+      </form>
+    </div>
+    <div class="panel-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>¿Ya eres miembre?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+            voluptate quasi ex enim obcaecati amet vel pariatur excepturi quos
+            culpa dicta dolorum sequi commodi? Voluptates quasi debitis
+            repudiandae quae enim.
+          </p>
+          <button class="btn" (click)="sign_up_mode()">Sign In</button>
+        </div>
+        <img
+          src=".../../../assets/undraw_secure_login_pdn4.svg"
+          class="image"
+        />
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>¿Aun no eres miembro?</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+            voluptate quasi ex enim obcaecati amet vel pariatur excepturi quos
+            culpa dicta dolorum sequi commodi? Voluptates quasi debitis
+            repudiandae quae enim.
+          </p>
+          <button class="btn" (click)="sign_up_mode()">Sing Up</button>
+        </div>
+        <img src="../../../assets/undraw_blogging_re_kl0d.svg" class="image" />
+      </div>
+    </div>
+  </div>
+</section>

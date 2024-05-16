@@ -1,0 +1,209 @@
+.container {
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: rgb(49, 48, 48);
+    margin: 0;
+    padding: 0;
+}
+.users{
+    width: 30%;
+    border: 1px solid rgb(177, 173, 173);
+    padding: 5px;
+}
+.users header {
+    color: white;
+    padding-left: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+.search {
+    width: 90%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: .5rem;
+    background-color: rgb(88, 79, 79);
+    height:60% ;
+}
+.search li {
+    color: rgb(190, 187, 187);
+}
+.search input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    caret-color: rgb(255, 255, 255);
+    color: #fff;
+
+}
+
+
+.search-user {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.chat {
+    width: 45%;
+    border: 1px solid rgb(177, 173, 173);
+    position: relative;
+
+}
+
+.container-users {
+    width: 100%;
+    height: 70px;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+.container-users:hover {
+    background-color: rgb(114, 101, 101);
+    
+}
+.container-users .profile-user {
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+.container-users .info-user{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100%;
+    width: 80%;
+}
+.container-users .info-user span:nth-child(1){
+    font-weight: 600;
+    color: #fff;
+}
+.container-users .info-user span:nth-child(2){
+    color: rgb(201, 197, 197);
+    font-size: 15px;
+}
+
+.header-user {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding-left: 20px;
+}
+.header-user .profile-user {
+    height: 40px;
+    width: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.header-user .name-user {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100%;
+    width: 80%;
+}
+.header-user .name-user span {
+    color: #fff;
+    font-weight: 700;
+}
+.box-chat {
+    width: 100%;
+    height: 81%;
+    overflow-y: scroll;
+    position: relative;
+    padding: 15px;
+}
+.write-message {
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 10px;
+}
+.write-message li {
+    color: rgb(118, 118, 243);
+    cursor: pointer;
+}
+.write-message .input {
+    display: flex;
+    align-items: center;
+    gap: .3rem;
+    background-color: #fff;
+    height: 35px;
+    width: 88%;
+    border-radius: 20px;
+    border: none;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.write-message .input input {
+    width: 90%;
+    border: none;
+    outline: none;
+}
+.message {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 5px 0;
+}
+.message p {
+    position: relative;
+    background-color: #6f86f0;
+    color: #fff;
+    max-width: 65%;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 0.9em;
+    right: 0;
+    text-align: right;
+}
+.message p::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #6f86f0 0%, #6f86f0 50%, transparent 50%, transparent);
+}
+
+.msg_sender {
+    justify-content: flex-end;
+}
+.msg_receive {
+    justify-content: flex-start;
+}
+.msg_receive p {
+    background: #fff;
+    color: black;
+}
+.msg_receive p::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(225deg, #fff 0%, #fff 50%, transparent 50%, transparent);
+}

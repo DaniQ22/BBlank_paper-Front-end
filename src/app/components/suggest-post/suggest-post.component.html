@@ -1,0 +1,18 @@
+<section>
+    <div class="container" (click)="openSuggest()">
+        <li class="fas fa-lightbulb"></li>
+    </div>
+
+
+    <div class="suggest-post" [ngClass]="{'open': openSuggestPost}">
+        <header>
+            <div class="robot">
+                <img src="../../../assets/icons8-robot.gif" alt="">
+            </div>
+            <div class="text">
+                <span class="text_typing">Hola!!, ¿No sabes que publicar? Checa estas recomendaciones!!</span>
+            </div>
+        </header>
+
+    </div>
+</section>
